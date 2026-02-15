@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Abdullah Ahmed · Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* (same base styles as index.html – copy from index, but keep only the essential) */
+        /* For brevity, I include the same style block from index up to the wrapper.
+           In a real project you'd externalize CSS, but here we keep it consistent. */
+        * { margin:0; padding:0; box-sizing:border-box; }
+        :root { --bg-deep:#0a0c12; --card-dark:#131720; --border-subtle:#2a2f3a; --text-bright:#eef2f8; --text-soft:#9aa7b9; --accent-teal:#2dd4bf; --accent-teal-dim:#1e3f3a; --nav-bg:#0f1219; --radius-md:18px; }
+        body.light { --bg-deep:#f0f5fa; --card-dark:#ffffff; --border-subtle:#cfddee; --text-bright:#0b1e2e; --text-soft:#2f4057; --accent-teal:#0d9488; --accent-teal-dim:#ccfbf1; }
+        body { background:var(--bg-deep); color:var(--text-bright); font-family: 'Inter',sans-serif; display:flex; justify-content:center; padding:2rem 1rem; position:relative; }
+        #particle-bg { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; pointer-events:none; }
+        .wrapper { max-width:1300px; width:100%; display:flex; gap:2rem; position:relative; z-index:5; }
+        .left-nav, .card { background:rgba(19,23,32,0.85); backdrop-filter:blur(5px); border:1px solid rgba(45,212,191,0.15); }
+        .left-nav { flex:0 0 200px; position:sticky; top:2rem; align-self:flex-start; border-radius:40px; padding:2rem 0.8rem; border:1px solid #232935; }
+        .nav-items { display:flex; flex-direction:column; gap:0.5rem; }
+        .nav-link { color:var(--text-soft); text-decoration:none; padding:0.8rem 1.5rem; border-radius:40px; display:flex; align-items:center; gap:0.8rem; transition:0.2s; border:1px solid transparent; }
+        .nav-link i { color:var(--accent-teal); width:1.5rem; }
+        .nav-link:hover { background:rgba(45,212,191,0.1); border-color:var(--accent-teal); color:white; transform:translateX(5px); }
+        .nav-link.active { background:var(--accent-teal-dim); color:white; border-color:var(--accent-teal); box-shadow:0 0 12px var(--accent-teal); }
+        .theme-toggle { margin-top:2rem; text-align:center; }
+        .theme-toggle button { background:transparent; border:1px solid var(--accent-teal); color:var(--accent-teal); padding:0.5rem 1rem; border-radius:30px; cursor:pointer; width:100%; font-weight:600; }
+        .main-content { flex:1; }
+        .card { border-radius:var(--radius-md); padding:2rem 2.2rem; margin-bottom:2rem; border:1px solid var(--border-subtle); }
+        h2 { font-size:1.8rem; display:flex; align-items:center; gap:0.7rem; border-bottom:2px solid var(--accent-teal); padding-bottom:0.5rem; margin-bottom:1.8rem; }
+        .filter-bar { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:2rem; }
+        .filter-btn { background:var(--card-dark); border:1px solid var(--border-subtle); padding:0.5rem 1.2rem; border-radius:40px; font-weight:500; cursor:pointer; color:var(--text-bright); }
+        .filter-btn.active, .filter-btn:hover { background:var(--accent-teal); color:#0a0c12; border-color:var(--accent-teal); }
+        .project-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:2rem; }
+        .project-card { background: #1A1F2C; border-radius:24px; padding:1.8rem 1.5rem; border:1px solid #2f3a48; transition:0.25s; }
+        .project-card:hover { border-color:var(--accent-teal); transform:translateY(-5px); background:#1f2635; }
+        .project-icon { font-size:2.2rem; color:var(--accent-teal); margin-bottom:0.8rem; }
+        .project-title { font-size:1.5rem; font-weight:600; margin-bottom:0.5rem; color:white; }
+        .project-desc { color:var(--text-soft); font-size:0.95rem; margin-bottom:1rem; }
+        .project-tech { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1rem; }
+        .tech-tag { background:#26313f; color:#cbd5e1; padding:0.25rem 1rem; border-radius:30px; font-size:0.8rem; border:1px solid #3a4757; }
+        .project-links a { color:var(--accent-teal); margin-right:1rem; font-size:0.9rem; text-decoration:none; }
+        @media (max-width:800px) { .wrapper { flex-direction:column; } .left-nav { position:relative; width:100%; } }
+    </style>
+</head>
+<body>
+    <canvas id="particle-bg"></canvas>
+    <div class="wrapper">
+        <nav class="left-nav">
+            <div class="nav-items">
+                <a href="index.html" class="nav-link"><i class="fas fa-user"></i> Home</a>
+                <a href="projects.html" class="nav-link active"><i class="fas fa-flask"></i> Projects</a>
+                <a href="dashboards.html" class="nav-link"><i class="fas fa-chart-pie"></i> Dashboards</a>
+                <a href="experience.html" class="nav-link"><i class="fas fa-briefcase"></i> Experience</a>
+                <a href="index.html#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+            <div class="theme-toggle">
+                <button id="themeToggle"><i class="fas fa-moon"></i> Light / Dark</button>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <section class="card">
+                <h2><i class="fas fa-flask"></i> Data Projects</h2>
+                <div class="filter-bar" id="filterBar">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="python">Python</button>
+                    <button class="filter-btn" data-filter="sql">SQL</button>
+                    <button class="filter-btn" data-filter="tableau">Tableau</button>
+                    <button class="filter-btn" data-filter="powerbi">Power BI</button>
+                    <button class="filter-btn" data-filter="excel">Excel</button>
+                </div>
+
+                <div class="project-grid" id="projectsContainer">
+                    <!-- project 1 (from user) -->
+                    <div class="project-card" data-category="excel powerbi">
+                        <div class="project-icon"><i class="fas fa-chart-simple"></i></div>
+                        <div class="project-title">Dynamic Sales Dashboard</div>
+                        <p class="project-desc">Transformed raw sales records into a filterable dashboard. Automated cleaning with Power Query. Key insight: 30% of revenue from top 5% products.</p>
+                        <div class="project-tech"><span class="tech-tag">Excel</span><span class="tech-tag">Power Query</span><span class="tech-tag">Pivot</span></div>
+                        <div class="project-links"><a href="#">GitHub</a><a href="#">Live</a><a href="#">Case Study</a></div>
+                    </div>
+                    <!-- project 2 -->
+                    <div class="project-card" data-category="python">
+                        <div class="project-icon"><i class="fab fa-python"></i></div>
+                        <div class="project-title">Python Automation Tool</div>
+                        <p class="project-desc">GUI for repetitive data entry tasks. Reduced manual time by 40%.</p>
+                        <div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Tkinter</span></div>
+                        <div class="project-links"><a href="#">GitHub</a><a href="#">Case Study</a></div>
+                    </div>
+                    <!-- project 3 -->
+                    <div class="project-card" data-category="powerbi sql">
+                        <div class="project-icon"><i class="fas fa-bolt"></i></div>
+                        <div class="project-title">Energy Consumption Analysis</div>
+                        <p class="project-desc">ETL with Power Query, interactive dashboards revealing seasonal trends.</p>
+                        <div class="project-tech"><span class="tech-tag">Power BI</span><span class="tech-tag">SQL</span></div>
+                        <div class="project-links"><a href="#">Live Dashboard</a></div>
+                    </div>
+                    <!-- project 4: Sales Forecasting (Python+Tableau) -->
+                    <div class="project-card" data-category="python tableau">
+                        <div class="project-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="project-title">Sales Forecasting Dashboard</div>
+                        <p class="project-desc">Prophet model + Tableau. Forecast accuracy improved by 23%.</p>
+                        <div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Tableau</span></div>
+                        <div class="project-links"><a href="#">GitHub</a><a href="#">Live</a></div>
+                    </div>
+                    <!-- project 5: Customer Segmentation (SQL+Python) -->
+                    <div class="project-card" data-category="python sql">
+                        <div class="project-icon"><i class="fas fa-users"></i></div>
+                        <div class="project-title">Customer Segmentation (RFM)</div>
+                        <p class="project-desc">SQL & Python clustering identified high-value segments.</p>
+                        <div class="project-tech"><span class="tech-tag">SQL</span><span class="tech-tag">Python</span></div>
+                        <div class="project-links"><a href="#">GitHub</a></div>
+                    </div>
+                    <!-- project 6: Churn Prediction -->
+                    <div class="project-card" data-category="python">
+                        <div class="project-icon"><i class="fas fa-robot"></i></div>
+                        <div class="project-title">Churn Prediction Model</div>
+                        <p class="project-desc">Scikit-learn classifier with 87% recall.</p>
+                        <div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Sklearn</span></div>
+                        <div class="project-links"><a href="#">GitHub</a></div>
+                    </div>
+                    <!-- project 7: Inventory Optimization -->
+                    <div class="project-card" data-category="sql python">
+                        <div class="project-icon"><i class="fas fa-boxes"></i></div>
+                        <div class="project-title">Inventory Optimization</div>
+                        <p class="project-desc">Demand forecasting using SQL & Python reduced stockouts by 15%.</p>
+                        <div class="project-tech"><span class="tech-tag">SQL</span><span class="tech-tag">Python</span></div>
+                        <div class="project-links"><a href="#">GitHub</a></div>
+                    </div>
+                    <!-- project 8: Financial Reporting Automation -->
+                    <div class="project-card" data-category="excel">
+                        <div class="project-icon"><i class="fas fa-file-excel"></i></div>
+                        <div class="project-title">Financial Reporting Automation</div>
+                        <p class="project-desc">VBA macros saved 10h/week in manual work.</p>
+                        <div class="project-tech"><span class="tech-tag">Excel VBA</span></div>
+                        <div class="project-links"><a href="#">GitHub</a></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Particle background (same as index) – copy the script from index.html
+        (function() {
+            const canvas = document.getElementById('particle-bg');
+            const ctx = canvas.getContext('2d');
+            let width, height, particles = [];
+            const PARTICLE_COUNT = 100;
+            const MAX_DIST = 150;
+            function init() {
+                width = window.innerWidth; height = window.innerHeight;
+                canvas.width = width; canvas.height = height;
+                for (let i=0; i<PARTICLE_COUNT; i++) particles.push({ x:Math.random()*width, y:Math.random()*height, vx:(Math.random()-0.5)*0.2, vy:(Math.random()-0.5)*0.2, r:1+Math.random()*2 });
+            }
+            function animate() {
+                ctx.clearRect(0,0,width,height);
+                for (let p of particles) { p.x+=p.vx; p.y+=p.vy; if (p.x<0||p.x>width) p.vx*=-0.9; if (p.y<0||p.y>height) p.vy*=-0.9; }
+                ctx.strokeStyle = 'rgba(255,255,255,0.15)'; ctx.lineWidth = 0.8;
+                for (let i=0; i<particles.length; i++) {
+                    for (let j=i+1; j<particles.length; j++) {
+                        let dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y, dist = Math.sqrt(dx*dx+dy*dy);
+                        if (dist < MAX_DIST) { ctx.globalAlpha = (1 - dist/MAX_DIST) * 0.2; ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y); ctx.stroke(); }
+                    }
+                }
+                ctx.fillStyle = 'white'; ctx.shadowBlur = 8; ctx.shadowColor = 'white';
+                for (let p of particles) { ctx.beginPath(); ctx.arc(p.x, p.y, p.r*1.2, 0, 2*Math.PI); ctx.fill(); }
+                ctx.shadowBlur = 0;
+                requestAnimationFrame(animate);
+            }
+            window.addEventListener('resize', ()=>{ width=window.innerWidth; height=window.innerHeight; canvas.width=width; canvas.height=height; });
+            init(); animate();
+        })();
+
+        // Theme toggle
+        const toggle = document.getElementById('themeToggle');
+        const body = document.body;
+        if (localStorage.getItem('theme') === 'light') body.classList.add('light');
+        toggle.addEventListener('click', ()=>{ body.classList.toggle('light'); localStorage.setItem('theme', body.classList.contains('light')?'light':'dark'); });
+
+        // Project filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projects = document.querySelectorAll('.project-card');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                projects.forEach(proj => {
+                    const cats = proj.dataset.category;
+                    if (filter === 'all' || (cats && cats.includes(filter))) {
+                        proj.style.display = '';
+                    } else {
+                        proj.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
