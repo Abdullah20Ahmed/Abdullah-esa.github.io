@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research · Dr. Sarah Chen Lab</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Research-specific styles */
+        .lab-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .member-card {
+            text-align: center;
+            padding: 1rem;
+            background: #f8fbfe;
+            border-radius: 20px;
+            border: 1px solid var(--border-subtle);
+        }
+        
+        .member-card i {
+            font-size: 2.5rem;
+            color: var(--accent-teal);
+            margin-bottom: 0.5rem;
+        }
+        
+        .member-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+        
+        .member-card p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        
+        .funding-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1rem;
+            border-bottom: 1px dashed var(--border-subtle);
+        }
+        
+        .funding-item:last-child {
+            border-bottom: none;
+        }
+        
+        .funding-amount {
+            background: var(--accent-teal);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            min-width: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <!-- SIDEBAR (Same as index.html) -->
+    <aside class="sidebar">
+        <div class="profile-header">
+            <div class="avatar">
+                <i class="fas fa-microscope"></i>
+            </div>
+            <div class="sidebar-name">Dr. Sarah Chen</div>
+            <div class="sidebar-title">Principal Investigator</div>
+        </div>
+
+        <div class="contact-info">
+            <div class="contact-item"><i class="fas fa-envelope"></i> s.chen@research.edu</div>
+            <div class="contact-item"><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</div>
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Boston, MA</div>
+            <div class="contact-item"><i class="fas fa-university"></i> Northeastern University</div>
+            <div class="contact-item"><i class="fas fa-orcid"></i> ORCID: 0000-0002-1234-5678</div>
+        </div>
+
+        <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            <a href="#" class="social-link"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="social-link"><i class="fab fa-google-scholar"></i> Scholar</a>
+            <a href="#" class="social-link"><i class="fas fa-file-pdf"></i> CV</a>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html" class="nav-item"><i class="fas fa-user"></i> About</a>
+            <a href="research.html" class="nav-item active"><i class="fas fa-flask"></i> Research</a>
+            <a href="publications.html" class="nav-item"><i class="fas fa-file-alt"></i> Publications</a>
+            <a href="index.html#academic" class="nav-item"><i class="fas fa-graduation-cap"></i> Academic</a>
+            <a href="index.html#contact" class="nav-item"><i class="fas fa-paper-plane"></i> Contact</a>
+        </nav>
+        
+        <div style="margin-top: 2rem; text-align: center;">
+            <span class="badge">Open for collaborations</span>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <!-- Back to Home Link -->
+        <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        
+        <!-- RESEARCH HEADER -->
+        <div class="card">
+            <h1>Research Program</h1>
+            <div class="subhead">Computational Genomics Laboratory</div>
+            
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">Our lab develops and applies computational methods to understand how genes are regulated in development and disease. We focus on single-cell genomics, spatial transcriptomics, and machine learning approaches to model gene regulatory networks.</p>
+        </div>
+        
+        <!-- RESEARCH AREAS -->
+        <div class="card">
+            <h2><i class="fas fa-flask"></i> Research Areas</h2>
+            
+            <div class="research-areas">
+                <div class="area-card">
+                    <i class="fas fa-dna"></i>
+                    <h4>Single-Cell Genomics</h4>
+                    <p>Developing algorithms for cell-type identification and trajectory inference from scRNA-seq data</p>
+                </div>
+                <div class="area-card">
+                    <i class="fas fa-brain"></i>
+                    <h4>Neurodevelopment</h4>
+                    <p>Understanding gene regulatory networks in human brain development using organoid models</p>
+                </div>
+                <div class="area-card">
+                    <i class="fas fa-chart-network"></i>
+                    <h4>Gene Regulatory Networks</h4>
+                    <p>Inferring causal networks from multi-omic data using deep learning approaches</p>
+                </div>
+                <div class="area-card">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h4>Spatial Transcriptomics</h4>
+                    <p>Mapping gene expression in tissue context to understand cell-cell interactions</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CURRENT PROJECTS -->
+        <div class="card">
+            <h2><i class="fas fa-microscope"></i> Current Projects</h2>
+            
+            <div class="academic-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2024-2026</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">NIH R01: Single-cell mapping of neurodevelopmental disorders</div>
+                        <div class="timeline-sub">Principal Investigator · $1.2M</div>
+                        <div class="timeline-desc">Integrating single-cell genomics and machine learning to identify regulatory mechanisms in autism spectrum disorder. We are generating single-cell multi-omic data from human brain organoids and developing computational methods to identify dysregulated gene regulatory networks.</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2023-2025</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">NSF CAREER: Interpretable AI for gene regulation</div>
+                        <div class="timeline-sub">Principal Investigator · $650K</div>
+                        <div class="timeline-desc">Developing explainable deep learning models to predict enhancer-promoter interactions across cell types. This project combines transformer architectures with attention mechanisms to provide biological insights into gene regulation.</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2022-2024</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Spatial transcriptomics in cancer immunology</div>
+                        <div class="timeline-sub">Collaborator · Dana-Farber Cancer Institute</div>
+                        <div class="timeline-desc">Mapping tumor-immune interactions in melanoma using spatial transcriptomics and computational modeling. We are developing methods to identify cell-cell communication networks from spatial data.</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2022-2024</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Single-cell atlas of human brain development</div>
+                        <div class="timeline-sub">Co-Investigator · Allen Institute Collaboration</div>
+                        <div class="timeline-desc">Creating a comprehensive single-cell transcriptomic atlas of human brain development from early gestation to adulthood. Our lab leads the computational analysis of gene regulatory dynamics.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- LAB MEMBERS -->
+        <div class="card">
+            <h2><i class="fas fa-users"></i> Lab Members</h2>
+            
+            <div class="lab-members">
+                <div class="member-card">
+                    <i class="fas fa-user-tie"></i>
+                    <h4>Dr. Sarah Chen</h4>
+                    <p>Principal Investigator</p>
+                </div>
+                <div class="member-card">
+                    <i class="fas fa-user-graduate"></i>
+                    <h4>Michael Rodriguez</h4>
+                    <p>Postdoctoral Fellow</p>
+                </div>
+                <div class="member-card">
+                    <i class="fas fa-user-graduate"></i>
+                    <h4>Lisa Wang</h4>
+                    <p>PhD Student</p>
+                </div>
+                <div class="member-card">
+                    <i class="fas fa-user-graduate"></i>
+                    <h4>James Kim</h4>
+                    <p>PhD Student</p>
+                </div>
+                <div class="member-card">
+                    <i class="fas fa-user"></i>
+                    <h4>Priya Patel</h4>
+                    <p>Research Assistant</p>
+                </div>
+                <div class="member-card">
+                    <i class="fas fa-user"></i>
+                    <h4>Alex Thompson</h4>
+                    <p>Undergraduate Researcher</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FUNDING -->
+        <div class="card">
+            <h2><i class="fas fa-dollar-sign"></i> Funding</h2>
+            
+            <div class="funding-item">
+                <span class="funding-amount">$1.2M</span>
+                <div>
+                    <div class="timeline-title">NIH R01</div>
+                    <div class="timeline-sub">2024-2029 · Single-cell genomics of neurodevelopment</div>
+                </div>
+            </div>
+            
+            <div class="funding-item">
+                <span class="funding-amount">$650K</span>
+                <div>
+                    <div class="timeline-title">NSF CAREER</div>
+                    <div class="timeline-sub">2023-2028 · Interpretable AI for gene regulation</div>
+                </div>
+            </div>
+            
+            <div class="funding-item">
+                <span class="funding-amount">$400K</span>
+                <div>
+                    <div class="timeline-title">Chan Zuckerberg Initiative</div>
+                    <div class="timeline-sub">2023-2025 · Seed Networks for Single-Cell Biology</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-note">
+            <i class="fas fa-dna" style="color: var(--accent-teal);"></i> Dr. Sarah Chen · Computational Genomics Lab
+        </div>
+    </main>
+</div>
+</body>
+</html>
