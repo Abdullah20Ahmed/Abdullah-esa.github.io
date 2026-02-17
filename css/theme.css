@@ -1,0 +1,66 @@
+/* theme.css - Light theme overrides */
+body.light {
+    --bg-deep: #f8fafc;
+    --card-dark: #ffffff;
+    --border-subtle: #e2e8f0;
+    --text-bright: #0f172a;
+    --text-soft: #334155;
+    --text-muted: #64748b;
+    --accent-teal: #0d9488;
+    --accent-teal-dim: #ccfbf1;
+    --nav-bg: #f1f5f9;
+    --hover-glow: rgba(13, 148, 136, 0.1);
+    --particle-color: rgba(13, 148, 136, 0.2);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --chart-grid: rgba(0, 0, 0, 0.1);
+    --chart-label: #334155;
+    --chart-tick: #64748b;
+}
+
+body.light .card {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 10px 25px -10px var(--shadow-color);
+}
+
+body.light .nav-link.active {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+body.light .social-link {
+    background: var(--accent-teal-dim);
+    color: #0d9488;
+}
+
+body.light .social-link:hover {
+    background: #0d9488;
+    color: white;
+}
+
+body.light .skill-tag {
+    background: #e6f7f5;
+    color: #0d9488;
+    border-color: #0d9488;
+}
+
+body.light .chart-container {
+    background: white;
+    border-color: #e2e8f0;
+}
+
+body.light .contact-form input,
+body.light .contact-form textarea {
+    background: white;
+    color: #0f172a;
+    border-color: #e2e8f0;
+}
+
+body.light #particle-bg {
+    opacity: 0.5;
+}
+
+body.light h1 {
+    background: linear-gradient(145deg, #0f172a, #0d9488);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
