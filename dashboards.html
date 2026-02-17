@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdullah Ahmed · Dashboards</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/particles.css">
+    <link rel="stylesheet" href="css/dashboards.css">
+</head>
+<body>
+    <canvas id="particle-bg"></canvas>
+    
+    <div class="wrapper">
+        <nav class="left-nav">
+            <div class="nav-items">
+                <a href="index.html" class="nav-link"><i class="fas fa-user"></i> Home</a>
+                <a href="projects.html" class="nav-link"><i class="fas fa-flask"></i> Projects</a>
+                <a href="dashboards.html" class="nav-link active"><i class="fas fa-chart-pie"></i> Dashboards</a>
+                <a href="experience.html" class="nav-link"><i class="fas fa-briefcase"></i> Experience</a>
+                <a href="index.html#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+            <div class="theme-toggle">
+                <button id="themeToggle"><i class="fas fa-moon"></i> Light / Dark</button>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <section class="card">
+                <h2><i class="fas fa-chart-pie"></i> Interactive Dashboards</h2>
+                
+                <div class="dashboard-grid">
+                    <!-- Sales KPI -->
+                    <div class="dashboard-card">
+                        <div class="dashboard-img"><i class="fas fa-chart-line"></i> Sales KPI</div>
+                        <div class="dashboard-body">
+                            <h4>Sales Performance Dashboard</h4>
+                            <p><strong>Question:</strong> Which regions underperform? <br> <strong>Tools:</strong> Tableau</p>
+                            <div>
+                                <span class="tech-tag">Tableau</span> 
+                                <span class="tech-tag">Sales</span>
+                            </div>
+                            <div style="margin-top:0.8rem;">
+                                <a href="#" class="btn-link">Live Preview <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Marketing ROI -->
+                    <div class="dashboard-card">
+                        <div class="dashboard-img"><i class="fas fa-chart-bar"></i> Marketing ROI</div>
+                        <div class="dashboard-body">
+                            <h4>Campaign Analyzer</h4>
+                            <p><strong>Question:</strong> Channel attribution & cost per lead. <br> <strong>Tools:</strong> Power BI</p>
+                            <div>
+                                <span class="tech-tag">Power BI</span> 
+                                <span class="tech-tag">Marketing</span>
+                            </div>
+                            <div style="margin-top:0.8rem;">
+                                <a href="#" class="btn-link">Live Preview <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Finance P&L -->
+                    <div class="dashboard-card">
+                        <div class="dashboard-img"><i class="fas fa-coins"></i> Finance P&L</div>
+                        <div class="dashboard-body">
+                            <h4>Profit & Loss Flash</h4>
+                            <p><strong>Question:</strong> Variance vs budget. <br> <strong>Tools:</strong> Excel, VBA</p>
+                            <div>
+                                <span class="tech-tag">Excel</span> 
+                                <span class="tech-tag">Finance</span>
+                            </div>
+                            <div style="margin-top:0.8rem;">
+                                <a href="#" class="btn-link">Download <i class="fas fa-download"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ops Efficiency -->
+                    <div class="dashboard-card">
+                        <div class="dashboard-img"><i class="fas fa-truck"></i> Ops Efficiency</div>
+                        <div class="dashboard-body">
+                            <h4>Inventory Turnover</h4>
+                            <p><strong>Question:</strong> Slow moving stock. <br> <strong>Tools:</strong> Tableau, SQL</p>
+                            <div>
+                                <span class="tech-tag">Tableau</span> 
+                                <span class="tech-tag">Operations</span>
+                            </div>
+                            <div style="margin-top:0.8rem;">
+                                <a href="#" class="btn-link">Live Preview <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- HR Analytics -->
+                    <div class="dashboard-card">
+                        <div class="dashboard-img"><i class="fas fa-users"></i> HR Dashboard</div>
+                        <div class="dashboard-body">
+                            <h4>Employee Attrition</h4>
+                            <p><strong>Question:</strong> Key drivers of turnover. <br> <strong>Tools:</strong> Power BI</p>
+                            <div>
+                                <span class="tech-tag">Power BI</span> 
+                                <span class="tech-tag">HR</span>
+                            </div>
+                            <div style="margin-top:0.8rem;">
+                                <a href="#" class="btn-link">Live Preview <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Supply Chain -->
+                    <div class="dashboard-card">
+                        <div class="dashboard-img"><i class="fas fa-box"></i> Supply Chain</div>
+                        <div class="dashboard-body">
+                            <h4>Logistics KPIs</h4>
+                            <p><strong>Question:</strong> On-time delivery performance. <br> <strong>Tools:</strong> Tableau</p>
+                            <div>
+                                <span class="tech-tag">Tableau</span> 
+                                <span class="tech-tag">Supply Chain</span>
+                            </div>
+                            <div style="margin-top:0.8rem;">
+                                <a href="#" class="btn-link">Live Preview <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tableau Public Feed Simulation -->
+                <div class="simulated-feed">
+                    <i class="fas fa-table"></i> Latest from Tableau Public: "Sales Forecast", "Customer Cohort", "Energy Trends" (simulated feed)
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/theme.js"></script>
+    <script src="js/particles.js"></script>
+</body>
+</html>

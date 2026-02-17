@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdullah Ahmed Esa · Data Analyst</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/particles.css">
+</head>
+<body>
+    <canvas id="particle-bg"></canvas>
+    
+    <div class="wrapper">
+        <!-- Left Navigation -->
+        <nav class="left-nav">
+            <div class="nav-items">
+                <a href="index.html" class="nav-link active"><i class="fas fa-user"></i> Home</a>
+                <a href="projects.html" class="nav-link"><i class="fas fa-flask"></i> Projects</a>
+                <a href="dashboards.html" class="nav-link"><i class="fas fa-chart-pie"></i> Dashboards</a>
+                <a href="experience.html" class="nav-link"><i class="fas fa-briefcase"></i> Experience</a>
+                <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+            <div class="theme-toggle">
+                <button id="themeToggle"><i class="fas fa-moon"></i> Light / Dark</button>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <!-- About Card -->
+            <section id="about" class="card">
+                <h1>Abdullah Ahmed Esa</h1>
+                <div class="subhead">Data Analyst · Computer Science</div>
+                <div class="contact-bar">
+                    <span class="contact-item"><i class="fas fa-envelope"></i> abd10esa@gmail.com</span>
+                    <span class="contact-item"><i class="fas fa-phone-alt"></i> +201018853661</span>
+                    <span class="contact-item"><i class="fas fa-map-marker-alt"></i> Egypt</span>
+                    <div class="social-links">
+                        <a href="https://github.com/Abdullah20Ahmed" target="_blank" class="social-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/abdullah-a-esa" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Summary Card -->
+            <section class="card">
+                <h2><i class="fas fa-chart-line"></i> Professional Summary</h2>
+                <p style="color: var(--text-soft); margin-bottom: 1rem;">Analytical professional and Computer Science student with a focused background in data architecture and systems analysis. I specialize in leveraging SQL, Power BI, and Python to bridge the gap between complex backend systems and clear, actionable data insights.</p>
+                <p style="color: var(--text-soft);">Recognized for logical approach to data modeling and translating technical findings into business insights. I ensure data integrity while creating intuitive dashboards that make complex information accessible.</p>
+            </section>
+
+            <!-- Skills & Radar Chart -->
+            <section id="skills" class="card">
+                <h2><i class="fas fa-cogs"></i> Skills & Proficiency</h2>
+                
+                <div class="skills-grid">
+                    <!-- Left column: Skill tags -->
+                    <div>
+                        <h3>Technical Skills</h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem;">
+                            <span class="skill-tag">SQL (Advanced)</span>
+                            <span class="skill-tag">Python (Pandas)</span>
+                            <span class="skill-tag">Power BI</span>
+                            <span class="skill-tag">Tableau</span>
+                            <span class="skill-tag">Excel (VBA)</span>
+                            <span class="skill-tag">Power Query</span>
+                            <span class="skill-tag">Statistics</span>
+                            <span class="skill-tag">Data Modeling</span>
+                            <span class="skill-tag">ETL</span>
+                        </div>
+                        
+                        <h3 style="margin-top: 1.5rem;">Analytical Skills</h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem;">
+                            <span class="skill-tag">Problem-Solving</span>
+                            <span class="skill-tag">Data Integrity</span>
+                            <span class="skill-tag">Pattern Recognition</span>
+                            <span class="skill-tag">Attention to Detail</span>
+                            <span class="skill-tag">Critical Thinking</span>
+                        </div>
+                        
+                        <h3>Languages</h3>
+                        <div class="languages">
+                            <span><strong>Arabic:</strong> Native</span>
+                            <span><strong>English:</strong> Elementary</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Right column: Radar Chart -->
+                    <div>
+                        <h3 style="text-align: center;">Self-Rating (0-100)</h3>
+                        <div class="chart-container">
+                            <canvas id="skillsRadar"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GitHub Stats -->
+            <div class="github-contrib">
+                <i class="fab fa-github" style="font-size: 2rem; color: var(--accent-teal); margin-bottom: 0.5rem;"></i>
+                <h3 style="margin-bottom: 0.5rem;">GitHub Activity</h3>
+                <div style="display: flex; justify-content: center; gap: 0.2rem; margin-bottom: 0.5rem;">
+                    <span style="display:inline-block; width:12px; height:40px; background:var(--accent-teal); border-radius:4px;"></span>
+                    <span style="display:inline-block; width:12px; height:25px; background:var(--accent-teal); border-radius:4px;"></span>
+                    <span style="display:inline-block; width:12px; height:55px; background:var(--accent-teal); border-radius:4px;"></span>
+                    <span style="display:inline-block; width:12px; height:30px; background:var(--accent-teal); border-radius:4px;"></span>
+                    <span style="display:inline-block; width:12px; height:45px; background:var(--accent-teal); border-radius:4px;"></span>
+                    <span style="display:inline-block; width:12px; height:20px; background:var(--accent-teal); border-radius:4px;"></span>
+                </div>
+                <p>487 contributions in the last year (simulated)</p>
+            </div>
+
+            <!-- Education & Certifications -->
+            <section id="education" class="card">
+                <h2><i class="fas fa-graduation-cap"></i> Education & Certifications</h2>
+                <div style="margin-bottom: 1.5rem;">
+                    <h3>Bachelor of Computer Science</h3>
+                    <div style="color: var(--accent-teal); font-weight: 500;">Misr Higher Institute for Science and Commerce</div>
+                    <div style="color: var(--text-soft);">2024 – 2028</div>
+                </div>
+                <div>
+                    <h3>Certifications</h3>
+                    <ul>
+                        <li>• Google Data Analytics Professional Certificate (expected 2025)</li>
+                        <li>• Tableau Desktop Specialist (in progress)</li>
+                        <li>• Microsoft Power BI Data Analyst Associate (planned)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section class="card">
+                <h2><i class="fas fa-comment"></i> Testimonials</h2>
+                <div class="testimonial-grid">
+                    <div class="help-card" style="text-align: left;">
+                        <i class="fas fa-quote-left" style="color: var(--accent-teal); font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+                        <p style="color: var(--text-soft); margin-bottom: 1rem;">"Abdullah transformed our raw sales data into a clear dashboard. His attention to detail is outstanding."</p>
+                        <p style="color: var(--accent-teal); font-weight: 600;">— Project Supervisor</p>
+                    </div>
+                    <div class="help-card" style="text-align: left;">
+                        <i class="fas fa-quote-left" style="color: var(--accent-teal); font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+                        <p style="color: var(--text-soft); margin-bottom: 1rem;">"Quick learner with strong analytical thinking. A pleasure to work with on academic projects."</p>
+                        <p style="color: var(--accent-teal); font-weight: 600;">— Colleague</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Blog Articles -->
+            <section class="card">
+                <h2><i class="fas fa-blog"></i> Articles & Writing</h2>
+                <ul>
+                    <li><i class="fab fa-medium" style="color: var(--accent-teal); margin-right: 0.5rem;"></i> <a href="#">"Cleaning Messy Excel Data with Power Query"</a> <span style="color: var(--text-muted);">(Medium, 2025)</span></li>
+                    <li><i class="fab fa-dev" style="color: var(--accent-teal); margin-right: 0.5rem;"></i> <a href="#">"Why Every Analyst Should Learn SQL"</a> <span style="color: var(--text-muted);">(Dev.to, 2024)</span></li>
+                </ul>
+            </section>
+
+            <!-- How I Can Help -->
+            <section class="card">
+                <h2><i class="fas fa-hand-sparkles"></i> How I Can Help You</h2>
+                <div class="help-grid">
+                    <div class="help-card">
+                        <div class="help-icon"><i class="fas fa-broom"></i></div>
+                        <h3>Data Cleaning & Strategy</h3>
+                        <p style="color: var(--text-soft);">Turn messy data into trustworthy, analysis-ready assets.</p>
+                    </div>
+                    <div class="help-card">
+                        <div class="help-icon"><i class="fas fa-chart-pie"></i></div>
+                        <h3>Visual Storytelling</h3>
+                        <p style="color: var(--text-soft);">Dashboards that make data alive and easy to understand.</p>
+                    </div>
+                    <div class="help-card">
+                        <div class="help-icon"><i class="fas fa-brain"></i></div>
+                        <h3>Logical Analysis</h3>
+                        <p style="color: var(--text-soft);">Uncover hidden patterns with CS principles.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Form -->
+            <section id="contact" class="card">
+                <h2><i class="fas fa-paper-plane"></i> Contact Me</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div>
+                        <p style="margin-bottom: 0.5rem;"><i class="fas fa-envelope" style="color: var(--accent-teal); width: 1.5rem;"></i> abd10esa@gmail.com</p>
+                        <p style="margin-bottom: 0.5rem;"><i class="fas fa-phone" style="color: var(--accent-teal); width: 1.5rem;"></i> +201018853661</p>
+                        <p style="margin-bottom: 1rem;"><i class="fas fa-map-marker-alt" style="color: var(--accent-teal); width: 1.5rem;"></i> Egypt</p>
+                        <a href="#" class="btn" style="margin-top: 1rem;"><i class="fas fa-download"></i> Download Resume (PDF)</a>
+                    </div>
+                    <form class="contact-form" action="https://formspree.io/f/yourformid" method="POST">
+                        <input type="text" name="name" placeholder="Your name" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <textarea name="message" rows="3" placeholder="Message"></textarea>
+                        <button type="submit" class="btn">Send message</button>
+                    </form>
+                </div>
+            </section>
+
+            <div class="footer-note">
+                <i class="fas fa-database" style="color: var(--accent-teal);"></i> Abdullah Ahmed Esa — clean data, clear insights
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/theme.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+</body>
+</html>
